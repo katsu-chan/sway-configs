@@ -1,0 +1,2 @@
+#!/bin/bash
+acpi -b | tee temp | awk '/0%/ {next} {status = ($2 ~ /Charging/) ? "[^] " : "[X] "; gsub(/Battery [0-9]+: /, "", $0); gsub(/, /, " "); gsub(/ remaining.*$/, ""); split($0, arr, " "); print status arr[2], substr(arr[3], 1, 5)}'
