@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MemFree=$(cat /proc/meminfo | sed -n "s/^MemFree:\s*\(\S*\).*$/\1/p" | sed "s/$/k/" | numfmt --from=iec --to=iec)
+SwapFree=$(cat /proc/meminfo | sed -n "s/^SwapFree:\s*\(\S*\).*$/\1/p" | sed "s/$/k/" | numfmt --from=iec --to=iec)
+echo "M:$MemFree S:$SwapFree"

@@ -1,0 +1,3 @@
+#!/bin/bash
+load="$(cat /proc/loadavg | sed "s/^\(.\... .\... .\...\).*$/\1/")"
+echo $load

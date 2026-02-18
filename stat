@@ -1,7 +1,9 @@
 #!/bin/bash
 
-dir="$(dirname $0)"
+export dir="$(dirname $0)"
 
-echo "$("$dir/batstat") | $("$dir/timestat")"
+#echo "$("$dir/batstat") | $("$dir/timestat")"
+echo "$("$dir/loadstat") | $("$dir/cputempstat") | $("$dir/memstat") | /:$("$dir/dfstat") | $("$dir/timestat")"
+#echo "$("$dir/dfstat")"
 #echo "$("$dir/batstat")
 #$("$dir/timestat")"
