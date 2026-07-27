@@ -15,7 +15,6 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term footclient
-exec systemctl start --user foot-server.socket
 # Your preferred application launcher
 set $menu wmenu-run
 
